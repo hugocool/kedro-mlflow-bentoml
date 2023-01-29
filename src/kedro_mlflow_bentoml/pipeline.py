@@ -5,7 +5,7 @@ generated using Kedro 0.18.4
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import make_predictions, report_accuracy, split_data
+from .nodes import train_model, calculate_accuracy, split_data
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -18,16 +18,16 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="split",
             ),
             node(
-                func=make_predictions,
-                inputs=["X_train", "X_test", "y_train"],
-                outputs="y_pred",
-                name="make_predictions",
+                func=train_model,
+                inputs=["X_train", "y_train"],
+                outputs="regressor",
+                name="train_model_node",
             ),
             node(
-                func=report_accuracy,
-                inputs=["y_pred", "y_test"],
-                outputs=None,
-                name="report_accuracy",
-            ),
+                func=calculate_accuracy,
+                inputs=['regressor', 'X_test', 'y_test'],
+                outputs="my_model_metrics",
+                name="log_metrics",
+        )
         ]
     )

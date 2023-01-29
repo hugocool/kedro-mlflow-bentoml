@@ -43,5 +43,15 @@
 # template. Please feel free to remove it once you remove the example pipeline.
 
 example_iris_data:
-  type: pandas.CSVDataSet
-  filepath: data/01_raw/iris.csv
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  data_set:
+      type: pandas.CSVDataSet  # or any valid kedro DataSet
+      filepath: data/01_raw/iris.csv
+
+iris_sklearn:
+  type: kedro_mlflow.io.models.MlflowModelLoggerDataSet
+  flavor: mlflow.sklearn
+
+my_model_metrics:
+    type: kedro_mlflow.io.metrics.MlflowMetricDataSet
+    key: accuracy
