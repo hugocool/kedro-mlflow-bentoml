@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+
+
+vscode:
+  extensions:
+    - ms-toolsai.jupyter-renderers
+    - ms-python.python
+    - davidanson.vscode-markdownlint
+    - ms-azuretools.vscode-docker
+    - ms-toolsai.jupyter
+
+    - hediet.vscode-drawio
+
+    - njpwerner.autodocstring
+
+    - mintlify.document
+
+    - ms-vscode.live-server
+
+tasks:
+  - name: prepare dev env
+    init: |
+      export PIP_USER=false 
+      poetry install --no-root 
+    command: poetry shell
