@@ -8,15 +8,13 @@ readme = "README.md"
 
 
 [tool.poetry.dependencies]
-python = "^3.9"
-kedro = "^0.18.4"
+python = "~3.9.10"
 kedro-mlflow = "^0.11.5"
 pandas = "^1.5.2"
 loguru = "^0.6.0"
 bentoml = "^1.0.12"
 numpy = "^1.24.1"
-sklearn = "^0.0-post.1"
-
+scikit-learn = "^1.2.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"
@@ -26,7 +24,6 @@ black = {version = "^22.1.0", allow-prereleases = true}
 flake8 = "^5.0.4"
 ipython = "^7.0.0"
 isort = "^5.10.1"
-pytest-cov = "^3.0.0"
 kedro-viz = "^5.1.1"
 jupyter = "^1.0.0"
 
@@ -36,15 +33,22 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 
+[tool.kedro]
+package_name = "kedro_mlflow_bentoml"
+project_name = "kedro-mlflow-bentoml"
+project_version = "0.18.4"
+
 [tool.isort]
 profile = "black"
 
 [tool.pytest.ini_options]
 addopts = """
 --cov-report term-missing \
---cov src/NLP-project -ra"""
+--cov src/kedro_mlflow_bentoml -ra"""
 
 [tool.coverage.report]
 fail_under = 0
 show_missing = true
 exclude_lines = ["pragma: no cover", "raise NotImplementedError"]
+
+
