@@ -2388,7 +2388,7 @@ files = [
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 files = [
@@ -2927,6 +2927,40 @@ pytz = ">=2020.1"
 
 [package.extras]
 test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
+
+[[package]]
+name = "pandera"
+version = "0.13.4"
+description = "A light-weight and flexible data validation and testing tool for statistical data objects."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pandera-0.13.4-py3-none-any.whl", hash = "sha256:9e91687861406284270add1d467f204630377892e7a4b45809bb7546f0013153"},
+    {file = "pandera-0.13.4.tar.gz", hash = "sha256:6ef2b7ee00d3439ac815d4347984421a08502da1020cec60c06dd0135e8aee2f"},
+]
+
+[package.dependencies]
+numpy = ">=1.19.0"
+packaging = ">=20.0"
+pandas = ">=1.2.0"
+pydantic = "*"
+typing-inspect = ">=0.6.0"
+wrapt = "*"
+
+[package.extras]
+all = ["black", "dask", "fastapi", "frictionless", "geopandas", "hypothesis (>=5.41.1)", "modin", "pandas-stubs (<=1.4.3.220807)", "pyspark (>=3.2.0)", "pyyaml (>=5.1)", "ray (<=1.7.0)", "scipy", "shapely"]
+dask = ["dask"]
+fastapi = ["fastapi"]
+geopandas = ["geopandas", "shapely"]
+hypotheses = ["scipy"]
+io = ["black", "frictionless", "pyyaml (>=5.1)"]
+modin = ["dask", "modin", "ray (<=1.7.0)"]
+modin-dask = ["dask", "modin"]
+modin-ray = ["modin", "ray (<=1.7.0)"]
+mypy = ["pandas-stubs (<=1.4.3.220807)"]
+pyspark = ["pyspark (>=3.2.0)"]
+strategies = ["hypothesis (>=5.41.1)"]
 
 [[package]]
 name = "pandocfilters"
@@ -4437,6 +4471,22 @@ files = [
 ]
 
 [[package]]
+name = "typing-inspect"
+version = "0.8.0"
+description = "Runtime inspection utilities for typing module."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "typing_inspect-0.8.0-py3-none-any.whl", hash = "sha256:5fbf9c1e65d4fa01e701fe12a5bca6c6e08a4ffd5bc60bfac028253a447c5188"},
+    {file = "typing_inspect-0.8.0.tar.gz", hash = "sha256:8b1ff0c400943b6145df8119c41c244ca8207f1f10c9c057aeed1560e4806e3d"},
+]
+
+[package.dependencies]
+mypy-extensions = ">=0.3.0"
+typing-extensions = ">=3.7.4"
+
+[[package]]
 name = "uri-template"
 version = "1.2.0"
 description = "RFC 6570 URI Template Processor"
@@ -4974,4 +5024,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.9.10"
-content-hash = "552bcfdac7c1d374f1b46422dae26fb5b1da66a23109a56835ac002029b92b3a"
+content-hash = "e33f5ffb74ce22620c8b5c2d6ca19514735a6b08bb6585fa6a2f73e29d89ee88"
