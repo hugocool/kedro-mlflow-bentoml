@@ -20,12 +20,12 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(
                 func=train_model,
                 inputs=["X_train", "y_train"],
-                outputs="regressor",
+                outputs="iris_sklearn",
                 name="train_model_node",
             ),
             node(
                 func=calculate_accuracy,
-                inputs=['regressor', 'X_test', 'y_test'],
+                inputs=['iris_sklearn', 'X_test', 'y_test'],
                 outputs="my_model_metrics",
                 name="log_metrics",
         )

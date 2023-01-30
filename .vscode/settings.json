@@ -1,0 +1,24 @@
+{
+    "githubIssues.issueBranchTitle": "${user}/issue${sanitizedIssueTitle}",
+    "jupyter.runStartupCommands": [
+        "%load_ext kedro.ipython"
+    ],
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "jupyter.jupyterServerType": "local",
+    "python.analysis.typeCheckingMode": "basic",
+    "docwriter.progress.trackFunctions": false,
+    "docwriter.progress.trackMethods": false,
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "python.venvPath": "${workspaceFolder}/.venv",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    "python.envFile": "${workspaceFolder}/.env",
+    "docwriter.style": "Google",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true,
+        "source.sortMembers": true
+    },
+    "javascript.format.enable": false,
+    "typescript.format.enable": false,
+}
