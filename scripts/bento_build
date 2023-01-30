@@ -1,4 +1,4 @@
+docker login
 bentoml build -f ./src/bento/bentofile.yaml ./src/bento
 bentoml containerize iris_classifier:latest -t stantion/iris_clf
-docker login
 docker push stantion/iris_clf:latest
